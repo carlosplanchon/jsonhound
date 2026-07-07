@@ -13,29 +13,23 @@ pip install httpx
 ## Usage
 
 ```bash
-python main.py <url> [options]
-```
-
-Drop an alias in your shell profile to call it like a proper command:
-
-```bash
-alias jsonhound='python /path/to/main.py'
+python jsonhound.py <url> [options]
 ```
 
 First run saves the initial state. Every run after that prints a diff.
 
 ```bash
 # Basic — sniff a list of items keyed by "id"
-python main.py https://api.example.com/posts
+python jsonhound.py https://api.example.com/posts
 
 # Key by a different field, save state elsewhere
-python main.py https://api.example.com/users -k username -o users-state.json
+python jsonhound.py https://api.example.com/users -k username -o users-state.json
 
 # Show specific fields in reports
-python main.py https://api.example.com/posts -d title author
+python jsonhound.py https://api.example.com/posts -d title author
 
 # Quieter output for cron / CI
-python main.py https://api.example.com/posts --no-color
+python jsonhound.py https://api.example.com/posts --no-color
 ```
 
 ## Options
